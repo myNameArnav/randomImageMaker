@@ -83,6 +83,6 @@ def randImg(numberOfThings):
 
     fileName = english_words[randrange(0, engLen)]
     img.show()
-    img.save(str(fileName) + ".png")
+    img.save(fileName + ".png")
     
 randImg(120)
