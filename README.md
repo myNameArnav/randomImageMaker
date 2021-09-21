@@ -4,10 +4,13 @@
 
 ### Some examples
 
-![img](https://imgur.com/VnKNYQo.png)
 
-![img](https://imgur.com/zTFqezG.png)
+![waifu](https://user-images.githubusercontent.com/35961071/134227379-efce8a35-0681-4586-8974-7009818c8f26.png)
 
-![img](https://imgur.com/f7v5tJ7.png)
+![parsimonious](https://user-images.githubusercontent.com/35961071/134227391-809752a9-3a92-4633-8a42-feada352627c.png)
 
-![img](https://imgur.com/lkN1c4m.png)
+![furthermore](https://user-images.githubusercontent.com/35961071/134227399-2721cd0d-5d95-4b76-8fe6-362169147086.png)
+
+![rawboned](https://user-images.githubusercontent.com/35961071/134227414-86dc7cba-857f-4ac7-9c09-2871acca3ba4.png)
+
+![jaw](https://user-images.githubusercontent.com/35961071/134227430-d0a5a87e-8131-491a-9e8a-ad07bb487809.png)
