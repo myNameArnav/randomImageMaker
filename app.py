@@ -81,7 +81,8 @@ def randImg(numberOfThings):
         # fnt3 = ImageFont.truetype(fnt, fontSize3)
         # draw.text((posX3,posY3), str(sym), fill= (r3, g3, b3), font = fnt3)
 
+    fileName = english_words[randrange(0, engLen)]
     img.show()
-    img.save("yolo.png")
+    img.save(str(fileName) + ".png")
     
 randImg(120)
