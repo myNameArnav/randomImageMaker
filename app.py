@@ -18,8 +18,9 @@ def randImg(numberOfThings):
     remachine = "fonts\RemachineScript.ttf"
     wedgie = "fonts\Wedgie.ttf"
     dancing = "fonts\DancingScript.ttf"
+    little = "fonts\LittleLordFontleroyNF.ttf"
     
-    lstFont = [bebas, hack, mont, roboto, slab, grey, raleway, rubik, art, orange, remachine, wedgie, dancing]
+    lstFont = [bebas, hack, mont, roboto, slab, grey, raleway, rubik, art, orange, remachine, wedgie, dancing, little]
     # lstNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
     # lstAlpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     # lstSym = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}"]
@@ -82,7 +83,8 @@ def randImg(numberOfThings):
         # draw.text((posX3,posY3), str(sym), fill= (r3, g3, b3), font = fnt3)
 
     fileName = english_words[randrange(0, engLen)]
-    img.show()
     img.save(fileName + ".png")
+    img.show()
     
-randImg(120)
+
+randImg(50)
