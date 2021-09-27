@@ -67,7 +67,7 @@ def randImg(numberOfThings):
         b1 = random.randint(0, 255)
         g1 = random.randint(0, 255)
         fnt1 = ImageFont.truetype(fnt, fontSize1)
-        draw.text((posX1,posY1), eng, fill = (r1, g1, b1), font = fnt1)
+        draw.text((posX1,posY1), ".", fill = (r1, g1, b1), font = fnt1)
         
         # r2 = random.randint(0, 255)
         # b2= random.randint(0, 255)
@@ -85,4 +85,4 @@ def randImg(numberOfThings):
     img.show()
     img.save(fileName + ".png")
     
-randImg(120)
+randImg(10000)
