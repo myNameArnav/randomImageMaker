@@ -19,7 +19,7 @@ def randImg(numberOfThings):
     wedgie = "fonts\Wedgie.ttf"
     dancing = "fonts\DancingScript.ttf"
     
-    lstFont = [bebas, hack, mont, roboto, slab, grey, raleway, rubik, art, orange, remachine, wedgie, dancing]
+    # lstFont = [bebas, hack, mont, roboto, slab, grey, raleway, rubik, art, orange, remachine, wedgie, dancing]
     # lstNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
     # lstAlpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     # lstSym = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}"]
@@ -27,7 +27,7 @@ def randImg(numberOfThings):
     # numLen = len(lstNum) -1
     # alphaLen = len(lstAlpha) -1
     # symLen = len(lstSym) -1
-    fntLen = len(lstFont) -1
+    # fntLen = len(lstFont) -1
     engLen = len(english_words) -1
     
     width = random.randint(1000, 5000)
@@ -60,13 +60,13 @@ def randImg(numberOfThings):
         # num = lstNum[randrange(0, numLen)]
         # alpha = lstAlpha[randrange(0, alphaLen)]
         # sym = lstSym[randrange(0, symLen)]
-        fnt = lstFont[randrange(0, fntLen)]
-        eng = english_words[randrange(0, engLen)]
+        # fnt = lstFont[randrange(0, fntLen)]
+        # eng = english_words[randrange(0, engLen)]
         
         r1 = random.randint(0, 255)
         b1 = random.randint(0, 255)
         g1 = random.randint(0, 255)
-        fnt1 = ImageFont.truetype(fnt, fontSize1)
+        fnt1 = ImageFont.truetype(bebas, fontSize1)
         draw.text((posX1,posY1), ".", fill = (r1, g1, b1), font = fnt1)
         
         # r2 = random.randint(0, 255)
