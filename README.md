@@ -1,6 +1,15 @@
 # Random Image Maker
 
 ## It does as the name says, it makes images with words from the [english dictionary](https://github.com/dwyl/english-words)
+### It randomizes:
+- How many times it runs
+- Size of the resulting image
+- Color of the background including alpha channel (opacity) 
+- Colors of the words including opacity
+- Fonts to be used
+- Position of the words
+- Size of the words
+
 
 ### Some examples
 
