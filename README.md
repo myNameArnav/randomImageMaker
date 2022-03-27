@@ -1,7 +1,9 @@
 # Random Image Maker
 
 ## It does as the name says, it makes images with words from the [english dictionary](https://github.com/dwyl/english-words)
-### It randomizes:
+
+### It randomizes
+
 - How many times it runs
 - Size of the resulting image
 - Color of the background including alpha channel (opacity) 
@@ -10,9 +12,7 @@
 - Position of the words
 - Size of the words
 
-
 ### Some examples
-
 
 ![waifu](https://user-images.githubusercontent.com/35961071/134227379-efce8a35-0681-4586-8974-7009818c8f26.png)
 
