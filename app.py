@@ -1,42 +1,34 @@
 from random import randint, randrange
 import os
 
+data = []
+iterationsData = []
 
-def randImg(numberOfThings):
+
+def makeFilePath(fileName):
+    return os.path.join("fonts", fileName)
+
+
+def randImg(numberOfThings, fileData=True):
     from PIL import Image, ImageDraw, ImageFont
     import random
     from read import english_words
 
-    bebas = os.path.join("fonts", "BebasNeue.ttf")
-    hack = os.path.join("fonts", "HackNF.ttf")
-    mont = os.path.join("fonts", "Montserrat.ttf")
-    roboto = os.path.join("fonts", "RobotoMono.ttf")
-    slab = os.path.join("fonts", "RobotoSlab.ttf")
-    grey = os.path.join("fonts", "GreyQo.ttf")
-    raleway = os.path.join("fonts", "Raleway.ttf")
-    rubik = os.path.join("fonts", "RubikBeastly.ttf")
-    art = os.path.join("fonts", "Art Brewery.ttf")
-    orange = os.path.join("fonts", "orange juice 2.0.ttf")
-    remachine = os.path.join("fonts", "RemachineScript.ttf")
-    wedgie = os.path.join("fonts", "Wedgie.ttf")
-    dancing = os.path.join("fonts", "DancingScript.ttf")
-    little = os.path.join("fonts", "LittleLordFontleroyNF.ttf")
-
     lstFont = [
-        bebas,
-        hack,
-        mont,
-        roboto,
-        slab,
-        grey,
-        raleway,
-        rubik,
-        art,
-        orange,
-        remachine,
-        wedgie,
-        dancing,
-        little,
+        makeFilePath("BebasNeue.ttf"),
+        makeFilePath("HackNF.ttf"),
+        makeFilePath("Montserrat.ttf"),
+        makeFilePath("RobotoMono.ttf"),
+        makeFilePath("RobotoMono.ttf"),
+        makeFilePath("GreyQo.ttf"),
+        makeFilePath("Raleway.ttf"),
+        makeFilePath("RubikBeastly.ttf"),
+        makeFilePath("Art Brewery.ttf"),
+        makeFilePath("orange juice 2.0.ttf"),
+        makeFilePath("RemachineScript.ttf"),
+        makeFilePath("Wedgie.ttf"),
+        makeFilePath("DancingScript.ttf"),
+        makeFilePath("LittleLordFontleroyNF.ttf"),
     ]
 
     fntLen = len(lstFont) - 1
@@ -47,32 +39,67 @@ def randImg(numberOfThings):
 
     randNum = random.randint(0, numberOfThings)
 
-    r = random.randint(0, 255)
-    b = random.randint(0, 255)
-    g = random.randint(0, 255)
-    a = random.randint(0, 255)
+    bgR, bgG, bgB, bgA = (
+        random.randint(0, 255),
+        random.randint(0, 255),
+        random.randint(0, 255),
+        random.randint(0, 255),
+    )
 
-    img = Image.new("RGBA", (width, height), (r, b, g, a))
+    img = Image.new("RGBA", (width, height), (bgR, bgG, bgB, bgA))
     draw = ImageDraw.Draw(img)
 
-    for _ in range(randNum):
-        fontSize1 = randint(20, 200)
+    data.append(
+        {
+            "imageSize": {"width": width, "height": height},
+            "color": {"red": bgR, "blue": bgB, "green": bgG},
+            "iteration": randNum,
+            "iterationData": [],
+        }
+    )
 
-        posX1 = random.randint(0, width)
-        posY1 = random.randint(0, height)
+    for _ in range(randNum):
+        fontSize = randint(20, 200)
 
         fnt = lstFont[randrange(0, fntLen)]
+        tempFnt = fnt
         eng = english_words[randrange(0, engLen)]
 
-        r1 = random.randint(0, 255)
-        b1 = random.randint(0, 255)
-        g1 = random.randint(0, 255)
-        fnt1 = ImageFont.truetype(fnt, fontSize1)
-        draw.text((posX1, posY1), eng, fill=(r1, g1, b1), font=fnt1)
+        frameBufferX = width - ((fontSize * len(eng)) % width)
+        frameBufferY = height - (fontSize * (fontSize % 3))
 
+        posX = random.randint(0, frameBufferX)
+        posY = random.randint(0, frameBufferY)
+
+        r, g, b = random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
+
+        fnt = ImageFont.truetype(fnt, fontSize)
+        draw.text((posX, posY), eng, fill=(r, g, b), font=fnt)
+
+        iterationsData.append(
+            {
+                "fontSize": fontSize,
+                "font": tempFnt,
+                "word": eng,
+                "frameBuffer": {
+                    "frameBufferX": frameBufferX,
+                    "frameBufferY": frameBufferY,
+                },
+                "position": {"PositionX": posX, "PositionY": posY},
+                "color": {"red": r, "blue": b, "green": g},
+            }
+        )
+
+    data[0]["iterationData"] = iterationsData
     fileName = english_words[randrange(0, engLen)]
-    img.save(fileName + ".png")
+
+    if not os.path.exists("images"):
+        os.makedirs("images")
+
+    path = os.path.join("images", fileName + ".png")
+    img.save(path)
+
     img.show()
-
-
-randImg(50)
+    if fileData:
+        return data
+    return 0
