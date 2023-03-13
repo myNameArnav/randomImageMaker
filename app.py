@@ -14,22 +14,10 @@ def randImg(numberOfThings, fileData=True):
     import random
     from read import english_words
 
-    lstFont = [
-        makeFilePath("BebasNeue.ttf"),
-        makeFilePath("HackNF.ttf"),
-        makeFilePath("Montserrat.ttf"),
-        makeFilePath("RobotoMono.ttf"),
-        makeFilePath("RobotoMono.ttf"),
-        makeFilePath("GreyQo.ttf"),
-        makeFilePath("Raleway.ttf"),
-        makeFilePath("RubikBeastly.ttf"),
-        makeFilePath("Art Brewery.ttf"),
-        makeFilePath("orange juice 2.0.ttf"),
-        makeFilePath("RemachineScript.ttf"),
-        makeFilePath("Wedgie.ttf"),
-        makeFilePath("DancingScript.ttf"),
-        makeFilePath("LittleLordFontleroyNF.ttf"),
-    ]
+    fontsPath = os.path.join(os.getcwd(), "fonts")
+    fontList = os.listdir(fontsPath)
+
+    lstFont = [makeFilePath(font) for font in fontList]
 
     fntLen = len(lstFont) - 1
     engLen = len(english_words) - 1
